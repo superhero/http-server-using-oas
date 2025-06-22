@@ -1,0 +1,43 @@
+{
+  "name": "@superhero/http-server-using-oas",
+  "version": "4.7.3",
+  "description": "Integrates the HTTP server and OAS (OpenAPI Specification) @superhero components",
+  "keywords": [
+    "HTTP 2.0",
+    "HTTP 1.1",
+    "HTTPS",
+    "OAS",
+    "OpenAPI",
+    "Router"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./dispatcher/*": "./dispatcher/*.js",
+    "./dispatcher/downstream/*": "./dispatcher/downstream/*.js",
+    "./dispatcher/upstream/*": "./dispatcher/upstream/*.js"
+  },
+  "scripts": {
+    "syntax-check": "syntax-check",
+    "test": "syntax-check; node --test --test-reporter=@superhero/audit/reporter --experimental-test-coverage"
+  },
+  "dependencies": {
+    "@superhero/oas": "4.7.3",
+    "@superhero/http-server": "4.7.3"
+  },
+  "devDependencies": {
+    "@superhero/audit": "4.7.3",
+    "@superhero/syntax-check": "0.0.2",
+    "@superhero/http-request": "4.7.3",
+    "@superhero/core": "4.7.3"
+  },
+  "author": {
+    "name": "Erik Landvall",
+    "email": "erik@landvall.se"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superhero/http-server-using-oas"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "dependency":
+  {
+    "@superhero/http-server": true
+  },
+  "locator":
+  {
+    "@superhero/http-server-using-oas":
+    {
+      "uses":
+      [
+        "@superhero/oas",
+        "@superhero/http-server"
+      ]
+    },
+    "@superhero/http-server-using-oas/dispatcher/options":
+    {
+      "path": "./dispatcher/options.js",
+      "uses": [ "@superhero/http-server-using-oas" ]
+    },
+    "@superhero/http-server-using-oas/dispatcher/upstream/parameters":
+    {
+      "path": "./dispatcher/upstream/parameters.js",
+      "uses": [ "@superhero/http-server-using-oas" ]
+    },
+    "@superhero/http-server-using-oas/dispatcher/upstream/request-bodies":
+    {
+      "path": "./dispatcher/upstream/request-bodies.js",
+      "uses": [ "@superhero/http-server-using-oas" ]
+    },
+    "@superhero/http-server-using-oas/dispatcher/downstream/responses":
+    {
+      "path": "./dispatcher/downstream/responses.js",
+      "uses": [ "@superhero/http-server-using-oas" ]
+    }
+  },
+  "oas":
+  {
+    "components": 
+    {
+      "headers"       : {},
+      "parameters"    : {},
+      "requestBodies" : {},
+      "responses"     : {},
+      "schemas"       : {}
+    },
+    "paths": {}
+  }
+}
