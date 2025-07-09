@@ -111,7 +111,8 @@ suite('@superhero/http-server-using-oas', () =>
         { headers:
           { ContentType: 
             { required: true, 
-              schema: { type: 'string' }}
+              schema: { type: 'string' }
+            }
           },
           parameters:
           { DefaultFoo:   { name: 'foo', in: 'query',  required: true,  schema: { '$ref': '#/components/schemas/String' }, nullable: true, default: null },
@@ -124,7 +125,8 @@ suite('@superhero/http-server-using-oas', () =>
           { ExampleRequestBody: { '$ref': '#/components/requestBodies/GenericRequestBody' },
             GenericRequestBody:
             { required: true,
-              content: { 'application/json': { schema: { '$ref': '#/components/schemas/Foo' }}}}
+              content: { 'application/json': { schema: { '$ref': '#/components/schemas/Foo' }}}
+            }
           },
           responses:
           { SuccessResult:
@@ -134,16 +136,19 @@ suite('@superhero/http-server-using-oas', () =>
             },
             BadRequest:
             { description: 'Bad Request',
-              schema: { '$ref': '#/components/schemas/Result' }}
+              content: { 'application/json': { schema: { '$ref': '#/components/schemas/Result' }}}
+            }
           },
           schemas:
           { String: { type: 'string' },
             Foo:
             { type: 'object',
-              properties: { foo: { '$ref': '#/components/schemas/String' }}},
+              properties: { foo: { '$ref': '#/components/schemas/String' }}
+            },
             Result:
             { type: 'object',
-              properties: { result: { '$ref': '#/components/schemas/String' } }}
+              properties: { result: { '$ref': '#/components/schemas/String' } }
+            }
           }
         },
         paths:
@@ -152,21 +157,27 @@ suite('@superhero/http-server-using-oas', () =>
             { parameters: [{ '$ref': '#/components/parameters/DefaultFoo' }],
               responses:
               { 200: { '$ref': '#/components/responses/SuccessResult' },
-                400: { '$ref': '#/components/responses/BadRequest' }}}
+                400: { '$ref': '#/components/responses/BadRequest' }
+              }
+            }
           },
           '/example/required':
           { get:
             { parameters: [{ '$ref': '#/components/parameters/RequiredFoo' }],
               responses:
               { 200: { '$ref': '#/components/responses/SuccessResult' },
-                400: { '$ref': '#/components/responses/BadRequest' }}}
+                400: { '$ref': '#/components/responses/BadRequest' }
+              }
+            }
           },
           '/example/foo/{foo}':
           { get:
             { parameters: [{ '$ref': '#/components/parameters/PathFoo' }],
               responses:
               { 200: { '$ref': '#/components/responses/SuccessResult' },
-                400: { '$ref': '#/components/responses/BadRequest' }}}
+                400: { '$ref': '#/components/responses/BadRequest' }
+              }
+            }
           },
           '/example':
           { get:
@@ -176,13 +187,16 @@ suite('@superhero/http-server-using-oas', () =>
               ],
               responses:
               { 200: { '$ref': '#/components/responses/SuccessResult' },
-                400: { '$ref': '#/components/responses/BadRequest' }}
+                400: { '$ref': '#/components/responses/BadRequest' }
+              }
             },
             post:
             { requestBody: { '$ref': '#/components/requestBodies/ExampleRequestBody' },
               responses:
               { 200: { '$ref': '#/components/responses/SuccessResult' },
-                400: { '$ref': '#/components/responses/BadRequest' }}}}}}
+                400: { '$ref': '#/components/responses/BadRequest' }}}}
+              }
+            }
 
     core.locate.config.assign({ oas:specification })
     await core.bootstrap()
