@@ -1,7 +1,8 @@
 {
   "dependency":
   {
-    "@superhero/http-server": true
+    "@superhero/oas"          : true,
+    "@superhero/http-server"  : true
   },
   "locator":
   {
