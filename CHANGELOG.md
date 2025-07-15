@@ -1,4 +1,10 @@
 ---
+#### v4.7.11
+---
+
+Bugfix route operation access
+
+---
 #### v4.7.10
 ---
 
