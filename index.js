@@ -81,9 +81,9 @@ export default class HttpServerUsingOas
     route['condition.method'] = method
     route.conditions.push('@superhero/http-server/condition/upstream/method')
 
-    if(operation.requestBody?.content)
+    if(route.operation.requestBody?.content)
     {
-      const supportedContentTypes     = Object.keys(operation.requestBody.content)
+      const supportedContentTypes     = Object.keys(route.operation.requestBody.content)
       route['condition.content-type'] = supportedContentTypes
 
       for(const supportedContentType of supportedContentTypes)
