@@ -63,13 +63,12 @@ export default class HttpServerUsingOas
     method = method.toLowerCase()
 
     const route = { dispatcher, conditions:[], middlewares:[] }
-    let operation
 
     try
     {
-      operation = this.oas.specification.paths[path][method]
+      const operation = this.oas.specification.paths[path][method]
       this.oas.validateOperation(operation)
-      operation = this.oas.denormalizeOperation(operation)
+      route.operation = this.oas.denormalizeOperation(operation)
     }
     catch(reason)
     {
@@ -101,8 +100,6 @@ export default class HttpServerUsingOas
     route.middlewares.push('@superhero/http-server-using-oas/dispatcher/upstream/request-bodies')
     route.middlewares.push('@superhero/http-server-using-oas/dispatcher/downstream/responses')
     route.middlewares.push(...[middlewares].flat())
-
-    Object.defineProperty(route, 'operation', { value: operation })
 
     this.server.router.set(`${method} ${path}`, route)
   }
