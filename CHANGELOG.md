@@ -1,4 +1,10 @@
 ---
+#### v4.7.13
+---
+
+Added support for a bootstrap process that builds routes automatically if an  or  field is defined
+
+---
 #### v4.7.12
 ---
 
