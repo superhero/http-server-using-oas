@@ -14,6 +14,11 @@
         "@superhero/http-server"
       ]
     },
+    "@superhero/http-server-using-oas/oas-to-routes":
+    {
+      "path": "./oas-to-routes.js",
+      "uses": [ "@superhero/http-server-using-oas" ]
+    },
     "@superhero/http-server-using-oas/dispatcher/options":
     {
       "path": "./dispatcher/options.js",

@@ -14,6 +14,7 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
+    "./oas-to-routes": "./oas-to-routes.js",
     "./dispatcher/*": "./dispatcher/*.js",
     "./dispatcher/downstream/*": "./dispatcher/downstream/*.js",
     "./dispatcher/upstream/*": "./dispatcher/upstream/*.js"
