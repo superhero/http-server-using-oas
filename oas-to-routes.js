@@ -17,10 +17,11 @@ export default class OasToRoutes
     {
       for(const [ method, operation ] of Object.entries(operations))
       {
-        const dispatcher = operation['operationId'] ?? operation['x-dispatcher']
+        let dispatcher = operation['operationId'] ?? operation['x-dispatcher']
 
         if('string' === typeof dispatcher)
         {
+          dispatcher = dispatcher.split('#').shift()
           this.router.setOasRoute(path, method, dispatcher, operation['x-middlewares'] ?? [])
         }
       }
