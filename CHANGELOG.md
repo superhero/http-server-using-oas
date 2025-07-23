@@ -1,4 +1,10 @@
 ---
+#### v4.7.15
+---
+
+Bugfixed reference error.
+
+---
 #### v4.7.14
 ---
 
