@@ -1,4 +1,10 @@
 ---
+#### v4.7.16
+---
+
+Bugfixed operation id containing hash sign.
+
+---
 #### v4.7.15
 ---
 
