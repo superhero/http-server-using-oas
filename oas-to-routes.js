@@ -13,7 +13,7 @@ export default class OasToRoutes
 
   bootstrap()
   {
-    for(const [ path, operations ] of Object.entries(this.oas.paths))
+    for(const [ path, operations ] of Object.entries(this.oas.specification.paths))
     {
       for(const [ method, operation ] of Object.entries(operations))
       {
