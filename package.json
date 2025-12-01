@@ -1,6 +1,6 @@
 {
   "name": "@superhero/http-server-using-oas",
-  "version": "4.7.23",
+  "version": "4.7.24",
   "description": "Integrates the HTTP server and OAS (OpenAPI Specification) @superhero components",
   "keywords": [
     "HTTP 2.0",
@@ -24,14 +24,14 @@
     "test": "syntax-check; node --test --test-reporter=@superhero/audit/reporter --experimental-test-coverage"
   },
   "dependencies": {
-    "@superhero/oas": "4.7.23",
-    "@superhero/http-server": "4.7.23"
+    "@superhero/oas": "4.7.24",
+    "@superhero/http-server": "4.7.24"
   },
   "devDependencies": {
-    "@superhero/audit": "4.7.23",
+    "@superhero/audit": "4.7.24",
     "@superhero/syntax-check": "0.0.2",
-    "@superhero/http-request": "4.7.23",
-    "@superhero/core": "4.7.23"
+    "@superhero/http-request": "4.7.24",
+    "@superhero/core": "4.7.24"
   },
   "author": {
     "name": "Erik Landvall",
