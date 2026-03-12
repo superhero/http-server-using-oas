@@ -1,4 +1,10 @@
 ---
+#### v4.8.6
+---
+
+returning 500 instead of 500 on failed response contract
+
+---
 #### v4.8.5
 ---\n\nVersion alignment...
 
