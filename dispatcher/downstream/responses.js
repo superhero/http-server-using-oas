@@ -39,7 +39,7 @@ export default class ResponsesMiddleware
   {
     const error   = new Error(`Invalid response for operation ${request.method} ${request.url}`)
     error.code    = 'E_OAS_INVALID_RESPONSE'
-    error.status  = 400
+    error.status  = 500
     error.cause   = reason
     session.abortion.abort(error)
   }
